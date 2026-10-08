@@ -141,6 +141,7 @@ class ExpenseTracker:
                       expense = Expense.from_file_format(line)
 
                       self.expenses.append(expense)
+              print("Expenses loaded from file successfully")
 
         except FileNotFoundError:
             pass
@@ -162,7 +163,9 @@ def main():
         print("3. Search Expense")
         print("4. Delete Expense")
         print("5. Show Total")
-        print("6. Exit")
+        print("6. Save To File")
+        print("7. Load From File")
+        print("8. Exit")
 
         choice = input("Enter choice: ")
 
@@ -182,6 +185,12 @@ def main():
             tracker.show_total()
 
         elif choice == "6":
+            tracker.Save_to_file()
+
+        elif choice == "7":
+            tracker.load_from_file()
+
+        elif choice == "8":
             print("Thank you! ")
             break
 
